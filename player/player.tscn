@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://c801uvpiyxyyj"]
+
+[ext_resource type="Script" uid="uid://bp3jjui8wm0gd" path="res://player/player.gd" id="1_fui21"]
+[ext_resource type="Texture2D" uid="uid://5svqqgwlos8p" path="res://assets/Character_077.png" id="2_ylu1k"]
+[ext_resource type="PackedScene" uid="uid://rbpv2yyecy83" path="res://utility/StateMachine/state_matchine.tscn" id="3_yw30f"]
+[ext_resource type="PackedScene" uid="uid://nlqqfy3ro7dl" path="res://player/PlayerState/PlayerFloatState/player_float_state.tscn" id="4_qjkh3"]
+[ext_resource type="PackedScene" uid="uid://cmshj8atbvbya" path="res://player/PlayerState/PlayerGroundedState/player_grounded_state.tscn" id="5_qjkh3"]
+[ext_resource type="PackedScene" uid="uid://cbkx6bn34y0yk" path="res://player/PlayerState/PlayerJumpingState/player_jumping_state.tscn" id="6_g6k8r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qjkh3"]
+radius = 10.198
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("state_machine")]
+script = ExtResource("1_fui21")
+state_machine = NodePath("StateMatchine")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -7)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ylu1k")
+hframes = 4
+vframes = 4
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_qjkh3")
+
+[node name="StateMatchine" parent="." node_paths=PackedStringArray("ready_state") instance=ExtResource("3_yw30f")]
+ready_state = NodePath("PlayerFloatState")
+
+[node name="PlayerFloatState" parent="StateMatchine" node_paths=PackedStringArray("player") instance=ExtResource("4_qjkh3")]
+player = NodePath("../..")
+
+[node name="PlayerGroundedState" parent="StateMatchine" node_paths=PackedStringArray("player") instance=ExtResource("5_qjkh3")]
+player = NodePath("../..")
+
+[node name="PlayerJumpingState" parent="StateMatchine" node_paths=PackedStringArray("player") instance=ExtResource("6_g6k8r")]
+player = NodePath("../..")

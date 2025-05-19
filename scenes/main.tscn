@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://gew24dhc10j7"]
+
+[ext_resource type="PackedScene" uid="uid://btahwyh1j6xg5" path="res://planet/planet.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://c801uvpiyxyyj" path="res://player/player.tscn" id="2_0wfyh"]
+[ext_resource type="Script" uid="uid://dppbgkjcmegt0" path="res://scenes/camera_2d.gd" id="2_sugp2"]
+
+[node name="main" type="Node2D"]
+
+[node name="planet" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(-493, 247)
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player") groups=["camera"]]
+script = ExtResource("2_sugp2")
+player = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource("2_0wfyh")]
+position = Vector2(-494, 177)
+
+[node name="planet2" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(126, 109)
+scale = Vector2(4, 4)
+
+[node name="planet3" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(-418, -192)
+scale = Vector2(2.12, 2.12)

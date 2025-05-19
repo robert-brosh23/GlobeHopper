@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbkx6bn34y0yk"]
+
+[ext_resource type="PackedScene" uid="uid://blgyj52hl2m1x" path="res://player/PlayerState/player_state.tscn" id="1_8s4ra"]
+[ext_resource type="Script" uid="uid://ctsa7j4vs828i" path="res://player/PlayerState/PlayerJumpingState/player_jumping_state.gd" id="2_qr18r"]
+
+[node name="PlayerJumpingState" instance=ExtResource("1_8s4ra")]
+script = ExtResource("2_qr18r")

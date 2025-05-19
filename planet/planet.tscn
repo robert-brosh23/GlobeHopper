@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://btahwyh1j6xg5"]
+
+[ext_resource type="Script" uid="uid://0q5suvpp0378" path="res://planet/planet.gd" id="1_1dy84"]
+[ext_resource type="Texture2D" uid="uid://cup61yhqtkkvw" path="res://assets/planet.png" id="1_m5mx5"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jyhfs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tbgi4"]
+radius = 2.4683
+
+[node name="planet" type="Node2D" groups=["planet"]]
+script = ExtResource("1_1dy84")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_jyhfs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+scale = Vector2(20, 20)
+shape = SubResource("CircleShape2D_tbgi4")
+
+[node name="Planet" type="Sprite2D" parent="."]
+scale = Vector2(0.2103, 0.2103)
+texture = ExtResource("1_m5mx5")

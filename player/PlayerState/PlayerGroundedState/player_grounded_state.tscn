@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmshj8atbvbya"]
+
+[ext_resource type="PackedScene" uid="uid://fpc4vtdwsnr8" path="res://utility/StateMachine/State/state.tscn" id="1_xcwql"]
+[ext_resource type="Script" uid="uid://olid78rd4a5p" path="res://player/PlayerState/PlayerGroundedState/player_grounded_state.gd" id="2_yq73n"]
+
+[node name="PlayerGroundedState" instance=ExtResource("1_xcwql")]
+script = ExtResource("2_yq73n")
