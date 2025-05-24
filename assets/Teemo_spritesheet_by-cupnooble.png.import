@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5svqqgwlos8p"
-path="res://.godot/imported/Character_077.png-1aff424d89073e1f4c3936b7495112c0.ctex"
+uid="uid://dmrhx55h4mi2o"
+path="res://.godot/imported/Teemo_spritesheet_by-cupnooble.png-7d09f660b765239e6d93fab8b752b16c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Character_077.png"
-dest_files=["res://.godot/imported/Character_077.png-1aff424d89073e1f4c3936b7495112c0.ctex"]
+source_file="res://assets/Teemo_spritesheet_by-cupnooble.png"
+dest_files=["res://.godot/imported/Teemo_spritesheet_by-cupnooble.png-7d09f660b765239e6d93fab8b752b16c.ctex"]
 
 [params]
 

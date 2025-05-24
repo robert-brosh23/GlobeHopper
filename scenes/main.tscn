@@ -10,6 +10,8 @@
 position = Vector2(-493, 247)
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player") groups=["camera"]]
+position = Vector2(-67, -233)
+zoom = Vector2(0.5, 0.5)
 script = ExtResource("2_sugp2")
 player = NodePath("../Player")
 
@@ -23,3 +25,39 @@ scale = Vector2(4, 4)
 [node name="planet3" parent="." instance=ExtResource("1_o5qli")]
 position = Vector2(-418, -192)
 scale = Vector2(2.12, 2.12)
+
+[node name="planet4" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(206, -627)
+scale = Vector2(2.12, 2.12)
+
+[node name="planet7" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(315, 826)
+scale = Vector2(2.12, 2.12)
+
+[node name="planet5" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(904, 787)
+scale = Vector2(2.7262, 2.65351)
+
+[node name="planet6" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(89, -1144)
+scale = Vector2(1.74705, 1.70046)
+
+[node name="planet8" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(858, -1119)
+scale = Vector2(2.67849, 2.61893)
+
+[node name="planet9" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(1641, -1683)
+scale = Vector2(5.31849, 5.20023)
+
+[node name="planet10" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(867, 300)
+scale = Vector2(1.31849, 1.28917)
+
+[node name="planet11" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(189, 1599)
+scale = Vector2(6.511, 6.36623)
+
+[node name="planet12" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(2036, -1234)
+scale = Vector2(1.31849, 1.28917)

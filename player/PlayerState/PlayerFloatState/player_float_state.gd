@@ -5,6 +5,9 @@ var planets = []
 func _ready() -> void:
 	planets = get_tree().get_nodes_in_group("planet")
 	
+func enter() -> void:
+	player.on_planet = null
+	
 func physics_update(_delta: float):
 	var collision = player.get_last_slide_collision()
 	
@@ -15,9 +18,11 @@ func physics_update(_delta: float):
 			player.on_planet = collided_object
 			Transitioned.emit(self, "PlayerGroundedState")
 			return
-
-	player.velocity += get_force_from_planets()
 	
+	if player.gravity_on:
+		player.velocity += get_force_from_planets()
+	else:
+		player.velocity *= .99
 
 func get_force_from_planets() -> Vector2:
 	var x_force = 0.0

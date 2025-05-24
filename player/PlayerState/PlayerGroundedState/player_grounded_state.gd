@@ -27,19 +27,8 @@ func move_via_mouse(_delta: float):
 	var canvas_xform = get_viewport().get_canvas_transform()
 	var mouse_world  = canvas_xform.affine_inverse() * mouse_screen
 	var angle = player.on_planet.global_position.angle_to_point(mouse_world)
-	if angle < 0:
-		angle = 2 * PI + angle
-		
-	var angle_difference = get_angle_to_planet() - angle
-	print(angle_difference)
-	if (angle_difference < get_step_length(_delta) and 
-			angle_difference > get_step_length(_delta) * -1 / planet_radius):
-		pass
-	elif angle_difference < 0 and angle_difference > PI * -1 or angle_difference > PI:
-		move_clockwise(_delta)
-	else:
-		move_counterclockwise(_delta)
-	#print("angle to planet: ", get_angle_to_planet(), "mouse angle: ", angle)
+	
+	player.global_position = player.on_planet.global_position + planet_radius * Vector2(cos(angle), sin(angle))
 
 func move_counterclockwise(_delta: float):
 	var angle = get_angle_to_planet()
